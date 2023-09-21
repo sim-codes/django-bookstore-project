@@ -152,4 +152,5 @@ STATICFILES_FINDERS = [
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
+DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
