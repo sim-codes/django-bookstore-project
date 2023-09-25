@@ -13,6 +13,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=0))
 
+# PAYSTACK_TEST_KEY = os.environ.get('PAYSTACK_TEST_KEY')
 ALLOWED_HOSTS = []
 
 
@@ -36,6 +37,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'books.apps.BooksConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 # django-allauth config

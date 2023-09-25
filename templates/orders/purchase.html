@@ -1,0 +1,24 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Orders{% endblock title %}
+
+{% block content %}
+<h1>Orders page</h1>
+<p>Buy for $39.00</p>
+
+<form id="paymentForm" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="user_email" id="email-address" value="{{ user.email }}">
+    <input type="hidden" name="api-key" id="api-key" value="{{ paystack_key }}">
+    <input type="hidden" name="amount" id="amount" value="39000.00">
+
+    <div class="form-submit">
+      <button type="submit" class="btn btn-success" onclick="payWithPaystack(event)"> Pay </button>
+    </div>
+</form>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="{% static 'js/paystack.js' %}"></script>
+
+{% endblock content %}
